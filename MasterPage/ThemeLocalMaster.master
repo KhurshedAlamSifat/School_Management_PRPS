@@ -1,0 +1,314 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ThemeLocalMaster.master.cs" Inherits="MasterPage_ThemeLocalMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!--Meta Tags-->
+    <%--  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />--%>
+
+    <!--Favicons-->
+    <%--<link rel="shortcut icon" type="image/x-icon" href="/ContentOuterTheme/assets/img/favicon.ico" />--%>
+
+    <!--Page Title-->
+    <title>PRPS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/ContentOuterTheme/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800|Roboto:300,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/css/icofont.min.css" />
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/css/meanmenu.min.css" />
+    <!--- owl carousel Css-->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/owlcarousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/owlcarousel/css/owl.theme.default.min.css" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/css/animate.css" />
+    <!-- venobox -->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/venobox/css/venobox.css" />
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="/ContentOuterTheme/rs-plugin/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/ContentOuterTheme/assets/css/extralayers.css" media="screen" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/css/style.css" />
+    <!-- Responsive  CSS -->
+    <link rel="stylesheet" href="/ContentOuterTheme/assets/css/responsive.css" />
+    <style>
+        .home-3 .top-area {
+            background: #ffffff;
+        }
+
+        .logo-area {
+            padding: 0px 0;
+        }
+
+        .welcome-section-padding {
+            padding: 30px 0;
+        }
+
+        .section-padding {
+            padding: 30px 0;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        @media only screen and (max-width: 488px) {
+            .top-header-area {
+                display: block !important;
+            }
+        }
+
+        .top-header-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .top-header-area .logo-area img {
+                max-width: 120px;
+                margin-right: 20px;
+            }
+
+        .logo-text-area {
+            text-align: left;
+        }
+
+        .top-header-area .logo-text-area h1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: rgb(0,87,255);
+        }
+
+        .top-header-area .logo-text-area span {
+            font-size: 15px;
+            font-weight: 500;
+            color: rgb(0,2,139);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body class="home-3">
+    <form id="form2" runat="server">
+        <!-- START PRELOADER -->
+        <div id="page-preloader">
+            <div class="loader"></div>
+            <div class="loa-shadow"></div>
+        </div>
+        <!-- END PRELOADER -->
+        <!-- START HEADER SECTION -->
+        <header class="main-header">
+            <!-- START TOP AREA -->
+            <div class="top-area">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-8 col-12 mx-auto text-center justify-content-center">
+                            <div class="top-menu top-header-area">
+                                <div class="logo-area">
+                                    <img src="/ContentOuterTheme/assets/img/custom/logo_prps.jpg" />
+                                </div>
+                                <div class="logo-text-area">
+                                    <h1>PRAN RFL Public School</h1>
+                                    <span>Where Knowledge Unfolds...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                </div>
+            </div>
+            <!-- END TOP AREA -->
+            <asp:Panel ID="pnlScrollingMessage" runat="server">
+                <div class="logo-area">
+                    <div class="auto-container">
+                        <div class="row">
+                            <marquee behavior="scroll" direction="left" style="color: blue; font-size: large; font-weight: 700;" onmouseover="this.stop();" onmouseout="this.start();">
+                                <asp:Repeater ID="rptNotice" runat="server">
+                                    <itemtemplate>
+                                        <a href="/Pages/Public/ViewLocalNotice.aspx?id=<%#Eval("Id") %>">| &nbsp;&nbsp;&nbsp; <%#Eval("Title") %> &nbsp;&nbsp;&nbsp;|</a>
+                                    </itemtemplate>
+                                </asp:Repeater>
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+
+            <!-- START NAVIGATION AREA -->
+            <div class="sticky-menu">
+                <div class="mainmenu-area">
+                    <div class="auto-container">
+                        <div class="row">
+                            <div class="col-9 mx-auto d-none d-lg-block d-md-none">
+                                <nav class="navbar navbar-expand-lg justify-content-center">
+                                    <ul class="navbar-nav">
+                                        <%--<li><a href="#slider" class="nav-link" style="text-transform: capitalize;">Slider</a></li>
+                                        <li><a href="#gallery" class="nav-link" style="text-transform: capitalize;">Gallery</a></li>--%>
+                                        <li class="dropdown" style="text-transform: capitalize;"><a class="nav-link" style="text-transform: capitalize;">School Information</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/Pages/SchoolInformaiton/AboutSchool.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">About School</a></li>
+                                                <li><a href="/Pages/SchoolInformaiton/TeachingApproval1.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Teaching Approval(Primary)</a></li>
+                                                <%if (CampusNo == "1" || CampusNo == "2") { %>
+                                                <li><a href="/Pages/SchoolInformaiton/TeachingApproval2.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Teaching Approval (VI-VIII)</a></li>
+                                                <% } %>
+                                                <%if (CampusNo == "1") { %>
+                                                <li><a href="/Pages/SchoolInformaiton/TeachingApproval3.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Teaching Approval (IX-X)</a></li>
+                                                <% } %>
+                                                <li><a href="/Pages/SchoolInformaiton/SchoolManagementCommittee.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">School Management Committee</a></li>
+                                                <li><a href="/Pages/SchoolInformaiton/TeacherInfo.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Teachers</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="text-transform: capitalize;"><a class="nav-link" style="text-transform: capitalize;">Academic</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/Pages/Academic/ClassRoutine.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Routines</a></li>
+                                                <li><a href="/Pages/Academic/Syllabus.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Syllabus</a></li>
+                                                <li><a href="/Pages/Academic/AcademicCalander.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Calander</a></li>
+                                                <li><a href="/Pages/Academic/StudentInfo.aspx?CampusNo=<%=CampusNo %>" style="text-transform: capitalize;">Students</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="/Pages/Public/LocalNoticeList.aspx" class="nav-link" style="text-transform: capitalize;">Notice</a></li>
+                                        <li><a href="/Pages/Public/ContentList.aspx" class="nav-link" style="text-transform: capitalize;">Content</a></li>
+                                        <li><a href="/Pages/JobApplication/JobApplicationEntry.aspx" class="nav-link" style="text-transform: capitalize;">Job Apllication</a></li>
+                                        <li><a href="/Login.aspx?CampusNo=<% =CampusNo %>" class="nav-link" style="text-transform: capitalize;">Login</a></li>
+                                        <li class="dropdown" style="text-transform: capitalize;"><a class="nav-link">Admission</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/Pages/User/AdmissionCircular.aspx" style="text-transform: capitalize;">Apply For Addmission</a></li>
+                                                <li><a href="/Pages/User/ApplicationDownload.aspx" style="text-transform: capitalize;">Application Download</a></li>
+                                                <%--<li><a href="/Pages/User/ApplicationPayment.aspx" style="text-transform: capitalize;">Application Payment</a></li>--%>
+                                                <li><a href="/Pages/User/AdmitCard.aspx" style="text-transform: capitalize;">Admit Card</a></li>
+                                                <li><a href="/Pages/User/AdmissionTestSchedule.aspx" style="text-transform: capitalize;">Exam Schedule</a></li>
+                                                <li><a href="/Pages/User/AdmissionResult.aspx" style="text-transform: capitalize;">Admission Result</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END NAVIGATION AREA -->
+        </header>
+        <!-- END HEADER SECTION -->
+
+        <asp:ContentPlaceHolder ID="cphMain" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- START FOOTER -->
+        <footer class="footer-section footer-2">
+            <div id="bottom-footer" class="bg-gray">
+                <div class="auto-container">
+                    <div class="row mb-lg-0 mb-md-4 mb-4">
+                        <div class="col-12 text-center">
+                            <p class="copyright-text">Copyright © 2022 <a href="#">PRAN RFL Group-CS-MIS</a> All Rights Reserved</p>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+        <!-- Latest jQuery -->
+        <script src="/ContentOuterTheme/assets/js/jquery-2.2.4.min.js"></script>
+        <!-- popper js -->
+        <script src="/ContentOuterTheme/assets/bootstrap/js/popper.min.js"></script>
+        <!-- Latest compiled and minified Bootstrap -->
+        <script src="/ContentOuterTheme/assets/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Meanmenu Js -->
+        <script src="/ContentOuterTheme/assets/js/jquery.meanmenu.js"></script>
+        <!-- Sticky JS -->
+        <script src="/ContentOuterTheme/assets/js/jquery.sticky.js"></script>
+        <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+        <script src="/ContentOuterTheme/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+        <script src="/ContentOuterTheme/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <!-- countdown js -->
+        <script src="/ContentOuterTheme/assets/js/jquery.countdown.min.js"></script>
+        <!-- owl-carousel min js  -->
+        <script src="/ContentOuterTheme/assets/owlcarousel/js/owl.carousel.min.js"></script>
+        <!-- isotope js -->
+        <script src="/ContentOuterTheme/assets/js/isotope.3.0.6.min.js"></script>
+        <!-- venobox js -->
+        <script src="/ContentOuterTheme/assets/venobox/js/venobox.min.js"></script>
+        <!-- jquery appear js  -->
+        <script src="/ContentOuterTheme/assets/js/jquery.appear.js"></script>
+        <!-- countTo js -->
+        <script src="/ContentOuterTheme/assets/js/jquery.inview.min.js"></script>
+        <!-- scrolltopcontrol js -->
+        <script src="/ContentOuterTheme/assets/js/scrolltopcontrol.js"></script>
+        <!-- WOW - Reveal Animations When You Scroll -->
+        <script src="/ContentOuterTheme/assets/js/wow.min.js"></script>
+        <!-- scripts js -->
+        <script src="/ContentOuterTheme/assets/js/scripts.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('.tp-banner').show().revolution(
+                    {
+                        dottedOverlay: "none",
+                        delay: 16000,
+                        startwidth: 1170,
+                        startheight: 550,
+                        hideThumbs: 200,
+                        thumbWidth: 100,
+                        thumbHeight: 50,
+                        thumbAmount: 5,
+                        navigationType: "bullet",
+                        navigationArrows: "solo",
+                        navigationStyle: "preview2",
+                        touchenabled: "on",
+                        onHoverStop: "on",
+                        swipe_velocity: 0.7,
+                        swipe_min_touches: 1,
+                        swipe_max_touches: 1,
+                        drag_block_vertical: false,
+                        parallax: "mouse",
+                        parallaxBgFreeze: "on",
+                        parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+                        keyboardNavigation: "off",
+                        navigationHAlign: "center",
+                        navigationVAlign: "bottom",
+                        navigationHOffset: 0,
+                        navigationVOffset: 20,
+                        soloArrowLeftHalign: "left",
+                        soloArrowLeftValign: "center",
+                        soloArrowLeftHOffset: 20,
+                        soloArrowLeftVOffset: 0,
+                        soloArrowRightHalign: "right",
+                        soloArrowRightValign: "center",
+                        soloArrowRightHOffset: 20,
+                        soloArrowRightVOffset: 0,
+                        shadow: 0,
+                        fullWidth: "on",
+                        fullScreen: "off",
+                        spinner: "spinner4",
+                        stopLoop: "off",
+                        stopAfterLoops: -1,
+                        stopAtSlide: -1,
+                        shuffle: "off",
+                        autoHeight: "off",
+                        forceFullWidth: "off",
+                        hideThumbsOnMobile: "off",
+                        hideNavDelayOnMobile: 1500,
+                        hideBulletsOnMobile: "off",
+                        hideArrowsOnMobile: "off",
+                        hideThumbsUnderResolution: 0,
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        startWithSlide: 0,
+                        fullScreenOffsetContainer: ""
+                    });
+            });
+        </script>
+    </form>
+</body>
+</html>

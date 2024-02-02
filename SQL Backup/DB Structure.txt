@@ -1,0 +1,43 @@
+﻿Users>>
+	st_Person,
+	Email_Configuration,
+	lb_BookLending,
+
+st_Person>>
+	tr_Teacher, 
+	ss_Student,
+	ss_Student_TC,
+	ss_Student_DuplicateRegNo,
+	st_ParmanentAddress,
+	st_PresentAddress,
+	
+	lb_BookRequest,
+	lb_IssueBook,
+	pr_StaffToType,
+		
+tr_teacher>>
+	tr_Education,
+	tr_Training,
+
+	bs_ClassRoutine,
+	nt_NoticeForTeacher,
+	rt_SubAndTeacher,
+	tr_Attendence,
+	tr_Payment,
+
+ss_Student>>
+	er_StudentToClass,
+	fee_Scholarship,
+	nt_SeenNotice,
+	ss_Payment,
+	ss_Payment_dbbl,
+	
+	acc_StudentFeeMapping,
+	acc_StudentDue_2021_to_2030,
+	acc_StudentInvoice_2021_to_2030,
+	
+	
+	
+
+	
+	
